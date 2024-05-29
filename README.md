@@ -4,23 +4,12 @@ The following features are available in Maverick:
 - Supports multiple file formats like PDF, docs, markdown, CSV, etc. 
 - Works with unstructured data 
 - Can create collections and default prompts 
+
 ## Introduction
-
 Using the Helm package manager, this chart deploys the maxai agent operator on a Kubernetes cluster.
+
 ## TL;DR
-- export HELM_EXPERIMENTAL_OCI=1
-
-```aws ecr get-login-password \
-    --region us-east-1 | helm registry login \
-    --username AWS \
-    --password-stdin 709825985650.dkr.ecr.us-east-1.amazonaws.com
-
-mkdir awsmp-chart && cd awsmp-chart
-
-helm pull oci://709825985650.dkr.ecr.us-east-1.amazonaws.com/zs-personalize-ai/maxai-agents-bundle --version 1.2.4
-
-tar xf $(pwd)/* && find $(pwd) -maxdepth 1 -type f -delete
-
+```
 helm install maverick \
     --namespace maxai-agent ./* \
     --set backend.serviceAccount.annotations=eks.amazonaws.com/role-arn: <<Replace with iam role created for s3>> \
@@ -38,7 +27,7 @@ helm install maverick \
 - VectorStore Details
 - ESO installation if want to integrate with External Secret Manager
 
-A Helm chart for Kubernetes
+
 ## Parameters
 ----------------------------------------------------------------------------------------------------------------------------------------------
 ## Global parameters
