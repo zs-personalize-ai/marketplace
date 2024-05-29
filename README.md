@@ -24,7 +24,7 @@ helm install maverick \
 - Kubernetes 1.23+
 - Helm 3.8.0+
 - LLM provider creds
-- VectorStore Details
+- VectorStore
 - ESO installation if want to integrate with External Secret Manager
 
 
