@@ -6,7 +6,30 @@ The following features are available in Maverick:
 - Can create collections and default prompts 
 ## Introduction
 
-This chart deploys the maxai agent operator on a Kubernetes cluster using the Helm package manager.
+Using the Helm package manager, this chart deploys the maxai agent operator on a Kubernetes cluster.
+## TL;DR
+- export HELM_EXPERIMENTAL_OCI=1
+
+```aws ecr get-login-password \
+    --region us-east-1 | helm registry login \
+    --username AWS \
+    --password-stdin 709825985650.dkr.ecr.us-east-1.amazonaws.com
+
+mkdir awsmp-chart && cd awsmp-chart
+
+helm pull oci://709825985650.dkr.ecr.us-east-1.amazonaws.com/zs-personalize-ai/maxai-agents-bundle --version 1.2.4
+
+tar xf $(pwd)/* && find $(pwd) -maxdepth 1 -type f -delete
+
+helm install maverick \
+    --namespace maxai-agent ./* \
+    --set backend.serviceAccount.annotations=eks.amazonaws.com/role-arn: <<Replace with iam role created for s3>> \
+    --set backend.resources.limits.memory=4Gi \
+    --set backend.ingress.hosts.host=agent-01.max.local \
+    --set ui.ingress.hosts.host=agent-01.max.local \
+    --set backend.ingress.hosts.paths.path=/fastapi \
+    --set ui.ingress.hosts.paths.path=/
+```
 
 ## Requirements
 - Kubernetes 1.23+
