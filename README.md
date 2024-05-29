@@ -1,6 +1,19 @@
-# Welcome to Maxai Agents Readme
+# Maxai Agents
+Using this marketplace product, you can deploy a Q&A agent named Maverick, which supports unstructured file formats such as PDFs, .docs, and more. 
+The following features are available in Maverick: 
+- Supports multiple file formats like PDF, docs, markdown, CSV, etc. 
+- Works with unstructured data 
+- Can create collections and default prompts 
+## Introduction
 
+This chart deploys the maxai agent operator on a Kubernetes cluster using the Helm package manager.
 
+## Requirements
+- Kubernetes 1.23+
+- Helm 3.8.0+
+- LLM provider creds
+- VectorStore Details
+- ESO installation if want to integrate with External Secret Manager
 
 A Helm chart for Kubernetes
 ## Parameters
