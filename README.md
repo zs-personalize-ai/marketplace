@@ -1,5 +1,5 @@
 # Maxai Agents
-Using this marketplace product, you can deploy a Q&A agent named Maverick, which supports unstructured file formats such as PDFs, .docs, and more. 
+Max.AI Maverick – Derive insights from extensive private test repositories through contextual analysis of multimodal data and advanced RAG. 
 The following features are available in Maverick: 
 - Supports multiple file formats like PDF, docs, markdown, CSV, etc. 
 - Works with unstructured data 
